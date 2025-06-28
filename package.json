@@ -1,0 +1,46 @@
+{
+  "name": "angeldiscordbot",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "My Personal Discord to Boost Productivity using Automation with Google's various APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node dist/index.js",
+    "build": "npx tsc",
+    "build2": "node  --loader ts-node/esm src/index.ts",
+    "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngeloRafael02/AngelDiscordBot.git"
+  },
+  "keywords": [
+    "discordjs",
+    "typescript",
+    "Google"
+  ],
+  "author": "Angelo Rafael F. Recio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngeloRafael02/AngelDiscordBot/issues"
+  },
+  "homepage": "https://github.com/AngeloRafael02/AngelDiscordBot#readme",
+  "dependencies": {
+    "@discordjs/builders": "^1.11.2",
+    "@discordjs/opus": "^0.10.0",
+    "@discordjs/rest": "^2.5.1",
+    "@discordjs/voice": "^0.18.0",
+    "discord.js": "^14.21.0",
+    "dotenv": "^17.0.0",
+    "ffmpeg-static": "^5.2.0",
+    "googleapis": "^150.0.1",
+    "mongoose": "^8.16.1"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^24.0.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

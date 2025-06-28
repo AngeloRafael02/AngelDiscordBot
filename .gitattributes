@@ -1,0 +1,9 @@
+* text=auto
+
+# Treat compiled JavaScript files as binary (no diffs)
+dist/**/*.js binary
+dist/**/*.js.map binary
+
+# Or, specifically for lock files like package-lock.json (which you typically *do* commit)
+# to prevent noisy diffs, only showing if the file changed.
+package-lock.json binary
