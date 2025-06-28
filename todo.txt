@@ -1,0 +1,2 @@
+BUGS
+    > Slash Commands are not Found
