@@ -68,6 +68,20 @@ const client =  new Client({
 
 client.commands = new Collection<string, Command>();
 
+const commandsPath = join(__dirname, 'commands');
+const commandFiles = readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+    const filePath = join(commandsPath, file);
+    const module =  await import(pathToFileURL(filePath).toString());
+    const command = module.default;
+    if ('data' in command && 'execute' in command) {
+        client.commands.set(command.data.name, command);
+    } else {
+        console.log(`The Command ${filePath} is missing a required "data" or "execute" property.`)
+    }
+}
+
 client.once(Events.ClientReady, async ()=>{
     console.log(`Ready, Logged in as ${client.user?.tag}`);
     await deployCommands();
