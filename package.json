@@ -7,7 +7,7 @@
   "scripts": {
     "test": "test",
     "start": "node dist/index.js",
-    "build": "npx tsc",
+    "build": "rmdir /s /q dist && npx tsc",
     "build2": "node  --loader ts-node/esm src/index.ts",
     "clean": "rimraf dist"
   },
