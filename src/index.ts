@@ -2,11 +2,10 @@ import { readdirSync } from 'fs';
 import { pathToFileURL } from 'url';
 import { join } from 'path';
 import dotenv from 'dotenv';
-import { REST, Routes, Client, GatewayIntentBits,Partials, Collection, PresenceUpdateStatus, Events, Interaction, CacheType } from 'discord.js';
+import { REST, Routes, Client, GatewayIntentBits,Partials, Collection, PresenceUpdateStatus, Events, Interaction, CacheType, ActivityType } from 'discord.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { ClientWithCommands, Command } from './interfaces'
-import { ActivityTypeMap } from './enums';
 
 const __filename:string = fileURLToPath(import.meta.url);
 const __dirname:string = dirname(__filename);
@@ -90,13 +89,11 @@ client.once(Events.ClientReady, async ()=>{
     const activityType = process.env.ACTIVITY_TYPE || 'PLAYING';
     const activityName = process.env.ACTIVITY_NAME || 'discord';
 
-
-
     client.user?.setPresence({
         status:PresenceUpdateStatus.Online, //Make it more dynamic in the future via StatusMap
         activities:[{
-            name:activityName,
-            type:ActivityTypeMap[activityType as keyof typeof ActivityTypeMap]
+            name:'discord',
+            type:ActivityType.Playing
         }]
     });
     console.log(`Bot Status Set To ${statusType}`);
