@@ -1,2 +1,5 @@
+ToDo
+    > call '/weather Lipa' every 8:00 am in Weather Channel - DONE
+    > call '/news' the fet the top 3 tech news from The News API - DONE
 BUGS
-    > Slash Commands are not Found
+    > Slash Commands are not Found - Done
